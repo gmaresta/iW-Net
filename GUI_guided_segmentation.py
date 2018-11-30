@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 23 11:10:19 2018
 
-@author: Elham
-"""
 
 import sys
 import pickle
@@ -146,11 +141,11 @@ class NoduleSegmentation:
 #        self.label.grid(row=0, column=0, columnspan=1, sticky=(N, E, W), pady=5, padx=5)
         
 
-        self.error_message = "Select a .npy containing a nodule"
-        self.label_text_error = tk.StringVar()
-        self.label_text_error.set(self.error_message)
-        self.label_error = tk.Label(self.master, textvariable=self.label_text_error,justify='left',anchor='w')
-        self.label_error.grid(row=0, column=1, columnspan=1, sticky=(tk.N, tk.E, tk.W), pady=5, padx=0)
+        #self.error_message = "Select a .npy containing a nodule"
+        #self.label_text_error = tk.StringVar()
+        #self.label_text_error.set(self.error_message)
+        #self.label_error = tk.Label(self.master, textvariable=self.label_text_error,justify='left',anchor='w')
+        #self.label_error.grid(row=0, column=1, columnspan=1, sticky=(tk.N, tk.E, tk.W), pady=5, padx=0)
         
 
         #text field
@@ -160,18 +155,18 @@ class NoduleSegmentation:
         
 
         self.browse_button = tk.Button(self.master, text="Browse", command=self.browse, state=tk.NORMAL)
-        self.browse_button.grid(row=0, column=0, sticky=(tk.N, tk.W), pady=5, padx=5)
+        self.browse_button.grid(row=0, column=0, sticky=(tk.N, tk.W))
         self.browse_button.config(width=20)
         
         
-        self.segmentation_button = tk.Button(self.master, text="Segmentation", command=self.segmentation, state=tk.DISABLED)
-        self.segmentation_button.grid(row=0, column=3, sticky=(tk.N, tk.W), pady=5, padx=5)
+        self.segmentation_button = tk.Button(self.master, text="Segment", command=self.segmentation, state=tk.DISABLED)
+        self.segmentation_button.grid(row=0, column=3, sticky=(tk.N, tk.W))
         self.segmentation_button.config(width=20)
         
         
         self.correction_button = tk.Button(self.master, text="Select points", command=self.select_points, state=tk.DISABLED)
-        self.correction_button.grid(row=0, column=6, sticky=(tk.N, tk.W), pady=5, padx=5)
-
+        self.correction_button.grid(row=0, column=6, sticky=(tk.N, tk.W))
+        self.correction_button.config(width=20)
 
 
 #        self.correction_button.config()
@@ -188,18 +183,18 @@ class NoduleSegmentation:
         
         
         #INITIAL IMAGE
-        self.message1 = "Central slice of the nodule (axial view):"
+        self.message1 = "Central slice of the nodule (axial view)"
         self.label_text1 = tk.StringVar()
         self.label_text1.set(self.message1)
-        self.label1 = tk.Label(self.master, textvariable=self.label_text1)        
-        self.label1.grid(row=5, column=0, columnspan=2, sticky=(tk.N, tk.E, tk.W), pady=5, padx=5)
+        self.label1 = tk.Label(self.master, textvariable=self.label_text1,anchor='w')        
+        self.label1.grid(row=0, column=2, columnspan=1, sticky=(tk.N, tk.E, tk.W), pady=5, padx=0)
 
         #INITIAL SEGMENTATION
         self.message2 = "Initial segmentation"
         self.label_text2 = tk.StringVar()
         self.label_text2.set(self.message2)
-        self.label2 = tk.Label(self.master, textvariable=self.label_text2)        
-        self.label2.grid(row=5, column=3, columnspan=3, sticky=(tk.N, tk.E, tk.W), pady=5, padx=5)
+        self.label2 = tk.Label(self.master, textvariable=self.label_text2,anchor='w')        
+        self.label2.grid(row=0, column=5, columnspan=1, sticky=(tk.N, tk.E, tk.W), pady=5, padx=0)
         #holder to place the imshow
 
 
@@ -209,8 +204,12 @@ class NoduleSegmentation:
         self.message3 = "Corrected segmentation"
         self.label_text3 = tk.StringVar()
         self.label_text3.set(self.message3)
-        self.label3 = tk.Label(self.master, textvariable=self.label_text3)        
-        self.label3.grid(row=5, column=6, columnspan=3, sticky=(tk.N, tk.E, tk.W), pady=5, padx=5)
+        self.label3 = tk.Label(self.master, textvariable=self.label_text3,anchor='w')        
+        self.label3.grid(row=0, column=8, columnspan=1, sticky=(tk.N, tk.E, tk.W), pady=5, padx=0)
+        
+        self.label_author = tk.Label(self.master, text='iW-Net: an automatic and minimalistic interactive lung nodule segmentation deep network. 2018. G. Aresta et al.',fg='gray',anchor='w')        
+        self.label_author.grid(row=10, column=0, columnspan=5, sticky=(tk.N, tk.E, tk.W), pady=5, padx=0)
+        
         #holder to place the imshow
         
         self.__ititFrames__()
