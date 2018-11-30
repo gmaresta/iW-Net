@@ -1,5 +1,5 @@
 # iW-Net
-iW-Net: an automatic and minimalistic interactive lung nodule segmentation deep network. By Guilherme Aresta, Colin Jacobs, Teresa Araújo, António Cunha, Isabel Ramos, Bram van Ginneken and Aurélio Campilho 
+iW-Net: an automatic and minimalistic interactive lung nodule segmentation deep network. By Guilherme Aresta, Colin Jacobs, Teresa Araújo, António Cunha, Isabel Ramos, Bram van Ginneken and Aurélio Campilho (December 2018)
 
 Please cite arXiv
 
