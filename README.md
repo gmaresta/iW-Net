@@ -8,7 +8,7 @@ ABSTRACT
 Instructions:
 - Download the repository
 - run GUI_guided_segmentation.py
-- load one of the .npy filesvia "Browse"
+- load one of the .npy files via "Browse"
 - perform the inital segmentation via "Segment"
 - press "Select points" to add 2 points to the nodule
 - the segmentation will change accordingly
